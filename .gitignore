@@ -11,7 +11,10 @@
 /composer.phar
 /vendor/
 /web/bundles/
-
+/web/bower/
+/web/css/
+/web/fonts/
+/web/js/dist/
 
 
 
