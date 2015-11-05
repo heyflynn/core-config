@@ -1,0 +1,13 @@
+@import:
+    - parameters.yml
+
+monolog.logfile: %root_dir%/app/logs/%env%.log
+
+http_cache.cache_dir: %root_dir%/app/cache/%env%/http
+http_cache.esi: null
+
+twig.path: %root_dir%/src/View
+
+twig.options:
+    cache: %root_dir%/app/cache/%env%/twig
+    strict_variables: true

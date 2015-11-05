@@ -1,0 +1,2 @@
+_prod:
+    resource: routing_prod.yml

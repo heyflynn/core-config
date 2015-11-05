@@ -1,0 +1,95 @@
+
+@mixin small() {
+    @media #{$small-only} {
+        @content;
+    }
+}
+@mixin small-up() {
+    @media #{$small-up} {
+        @content;
+    }
+}
+
+@mixin medium() {
+    @media #{$medium-only} {
+        @content;
+    }
+}
+@mixin medium-up() {
+    @media #{$medium-up} {
+        @content;
+    }
+}
+
+@mixin large() {
+    @media #{$large-only} {
+        @content;
+    }
+    .lt-ie9 & {
+        @content;
+    }
+}
+
+@mixin large-up() {
+    @media #{$large-up} {
+        @content;
+    }
+    .lt-ie9 & {
+        @content;
+    }
+}
+
+@mixin xlarge() {
+    @media #{$xlarge-only} {
+        @content;
+    }
+    .lt-ie9 & {
+        @content;
+    }
+}
+
+@mixin xlarge-up() {
+    @media #{$xlarge-up} {
+        @content;
+    }
+    .lt-ie9 & {
+        @content;
+    }
+}
+
+@mixin xxlarge() {
+    @media #{$xxlarge-only} {
+        @content;
+    }
+    .lt-ie9 & {
+        @content;
+    }
+}
+
+
+
+// Calculate line-height based upon $rem-base
+@function line-height( $font-size: $rem-base ) {
+	@return round( $base-line-height / strip-unit($font-size) * 10000 ) / 10000;
+}
+
+//  =Convert unitless to px value
+// -----------------------------------------------
+//  $unitless	- unitless pixel value
+
+@function px( $unitless-px ) {
+	@return 0px + $unitless-px;
+}
+
+//  =Type
+// -------------------------------------------------
+// Optimized typography for font-size ignoring the width
+@mixin type-font($fontsize, $ratio: $golden-ratio) {
+    $line-height: $fontsize * $ratio;
+
+    // px before rem to support older browsers
+    line-height: px($line-height);
+    line-height: rem-calc($line-height);
+    font-size: px($fontsize);
+    font-size: rem-calc($fontsize);
+}

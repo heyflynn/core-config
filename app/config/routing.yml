@@ -1,0 +1,18 @@
+home:
+  path: /
+  defaults: { _controller: Controller\DefaultController::indexAction }
+
+members:
+  path: /members/
+  defaults: { _controller: Controller\MembersController::indexAction }
+  schemes:  [https]
+
+login:
+  path: /login/
+  defaults: { _controller: Controller\AuthController::loginAction }
+  schemes:  [https]
+
+logout:
+  path: /logout/
+  defaults: { _controller: Controller\AuthController::logoutAction }
+  schemes:  [https]

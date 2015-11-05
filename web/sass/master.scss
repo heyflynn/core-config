@@ -1,0 +1,17 @@
+@charset "UTF-8";  // Make sure the charset is set appropriately
+
+//@import "../fonts/fonts.css";
+@import "font-awesome/scss/font-awesome.scss";
+
+// Compass and Helpers
+@import "compass/css3",
+        "normalize",
+        "settings",
+        "mixins";
+
+// Import Components
+@import "components/foundation",
+        "components/sifoan";
+
+// Import Project
+@import "project";

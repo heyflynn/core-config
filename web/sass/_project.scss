@@ -1,0 +1,38 @@
+
+/* resizes all REM-CALC Sizes based on media queries */
+html, body {
+
+    @include small() {
+        font-size:$percent-small;
+    }
+    @include medium() {
+        font-size:$percent-medium;
+    }
+    @include large() {
+        font-size:$percent-large;
+    }
+    @include xlarge() {
+        font-size:$percent-xlarge;
+    }
+    @include xxlarge() {
+        font-size:$percent-xxlarge;
+    }
+}
+
+/* Global & Helpers */
+body {
+    margin: 0;
+    padding-top: rem-calc(75);
+    @include type-font(16);
+
+}
+
+h1 {
+    @include type-font(75);
+    font-weight: 100;
+}
+
+h2 {
+
+
+}

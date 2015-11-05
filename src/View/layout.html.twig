@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% block header_outer %}
+        {% set header = block('header') %}
+        {% if header is not empty %}
+            <header>
+                {{ header|raw }}
+            </header>
+        {% endif %}
+    {% endblock %}
+
+    {% block main %}
+        {% block content "" %}
+    {% endblock %}
+
+    {% block footer_outer %}
+        <footer>
+        </footer>
+    {% endblock %}
+
+{% endblock %}
