@@ -19,7 +19,6 @@
         "flint/flint":"~1.0"
     },
     "require-dev": {
-
         "symfony/var-dumper": "~2.7",
         "symfony/browser-kit": "~2.7",
         "symfony/css-selector": "~2.7",
@@ -28,11 +27,16 @@
     "scripts": {
         "pre-install-cmd": [
             "npm install",
-            "node node_modules/bower/bin/bower install --allow-root"
+            "node node_modules/bower/bin/bower install --allow-root",
+            "ComposerScripts::postInstall",
+            "gulp build"
+
         ],
         "pre-update-cmd": [
             "npm install",
-            "node node_modules/bower/bin/bower install --allow-root"
+            "node node_modules/bower/bin/bower install --allow-root",
+            "ComposerScripts::postUpdate",
+            "gulp build"
         ]
     },
     "autoload": {
@@ -49,7 +53,7 @@
     "extra": {
         "assets-install": "symlink",
         "incenteev-parameters": [
-            { "file": "config/parameters.yml" }
+            { "file": "app/config/parameters.yml" }
         ]
     }
 }

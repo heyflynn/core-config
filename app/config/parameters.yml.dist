@@ -1,0 +1,9 @@
+# This file is auto-generated during the composer install
+parameters:
+    site_name: Sifoan
+    env_tier: %env%
+    domain_base: sifoan.com
+    domain_prefix: '%env_tier%'
+    domain_fqdn: '%domain_prefix%.%domain_base%'
+    site_domain: '%domain_fqdn%'
+    cdn_host: '%domain_fqdn%'

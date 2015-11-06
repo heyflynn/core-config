@@ -34,6 +34,10 @@ if ($debug) {
 $app = new Sifoan(__DIR__ ."/..",$env, $debug);
 $app->boot();
 
+/*********************************
+ * cache:clear
+ * clears the cache
+ *********************************/
 $console
     ->register('cache:clear')
     ->setName('cache:clear')
@@ -56,5 +60,7 @@ EOT
             echo "An error occurred while creating your directory at ".$e->getPath();
         }
     });
+
+
 
 $console->run($input);

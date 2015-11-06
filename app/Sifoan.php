@@ -49,7 +49,6 @@ class Sifoan extends Application {
 
         // register each provider with config from settings
         foreach ($providers as $provider) {
-            $name = $this->camelToUnderscore(str_replace("ServiceProvider","",$this->getClassName($provider)));
             $this->register($provider);
         }
 
@@ -75,33 +74,4 @@ class Sifoan extends Application {
         $this->configure("{$this['config_dir']}/config_$env.yml");
     }
 
-    public function getClassName($class)
-    {
-        if(is_object($class))
-            $class = get_class($class);
-
-        if ($pos = strrpos($class, '\\')) return substr($class, $pos + 1);
-        return $pos;
-    }
-
-
-    public function camelToUnderscore($camel) {
-        return $this->camelTo($camel, "_");
-    }
-
-
-    public function camelToDot($camel) {
-        return $this->camelTo($camel, ".");
-    }
-
-    public function camelTo($camel, $seperator = "_") {
-        preg_match_all('!([A-Z][A-Z0-9]*(?=$|[A-Z][a-z0-9])|[A-Za-z][a-z0-9]+)!', $camel, $matches);
-        $ret = $matches[0];
-
-        foreach ($ret as &$match) {
-            $match = $match == strtoupper($match) ? strtolower($match) : lcfirst($match);
-        }
-
-        return implode($seperator, $ret);
-    }
 }
