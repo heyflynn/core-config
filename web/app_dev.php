@@ -1,5 +1,7 @@
 <?php
 
+
+
 // If you don't want to setup permissions the proper way, just uncomment the following PHP line
 // read http://symfony.com/doc/current/book/installation.html#configuration-and-setup for more information
 //umask(0000);
@@ -13,6 +15,15 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
     header('HTTP/1.0 403 Forbidden');
     exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 }
+
+if (php_sapi_name() === 'cli-server') {
+    $filename = __DIR__.preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
+    if (is_file($filename)) {
+        return false;
+    }
+}
+
+
 
 # If you want Silex to trust the X-Forwarded-For* headers from your reverse proxy at address $ip, you will need to whitelist it as documented in
 # http://symfony.com/doc/current/components/http_foundation/trusting_proxies.html

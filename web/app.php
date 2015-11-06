@@ -1,5 +1,11 @@
 <?php
 
+if (php_sapi_name() === 'cli-server') {
+    $filename = __DIR__.preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
+    if (is_file($filename)) {
+        return false;
+    }
+}
 # If you want Silex to trust the X-Forwarded-For* headers from your reverse proxy at address $ip, you will need to whitelist it as documented in
 # http://symfony.com/doc/current/components/http_foundation/trusting_proxies.html
 // Symfony\Component\HttpFoundation\Request::setTrustedProxies(array('127.0.0.1', '::1'));
