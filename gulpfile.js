@@ -80,6 +80,9 @@ gulp.task('server-start', function() {
 gulp.task('build-js', function() {
   return gulp.src([
         'web/bower/angular/angular.js',
+        'web/bower/angular-animate/angular-animate.js',
+        'web/bower/angular-aria/angular-aria.js',
+        'web/bower/angular-material/angular-material.js',
         'web/js/src/*.js'
     ])
     .pipe(mode.prod(plugins.uglify()))
@@ -105,9 +108,7 @@ gulp.task('lint', function() {
 // Build pollyfil js: Run manually with: "gulp build-poly"
 gulp.task('build-poly', function() {
   return gulp.src([
-        'web/bower/modernizr/modernizr.js',
-        'web/bower/src/respond.js',
-        'bower/respond/cross-domain/respond.proxy.js'
+        'web/bower/modernizr/modernizr.js'
     ])
     .pipe(mode.prod(plugins.uglify()))
     .pipe(plugins.concat('polyfills.js'))

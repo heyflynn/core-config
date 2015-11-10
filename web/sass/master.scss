@@ -4,14 +4,16 @@
 @import "font-awesome/scss/font-awesome.scss";
 
 // Compass and Helpers
-@import "compass/css3",
-        "normalize",
-        "settings",
-        "mixins";
+@import "compass/css3"
+//        "normalize",
+//        "settings",
+//        "mixins"
+        ;
+
+@import "angular-material";
 
 // Import Components
-@import "components/foundation",
-        "components/sifoan";
+@import "components/sifoan";
 
 // Import Project
 @import "project";

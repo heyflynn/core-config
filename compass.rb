@@ -16,7 +16,7 @@ fonts_dir = 'web/fonts'
 relative_assets = true
 # sprite_engine = :oily_png
 
-add_import_path "web/bower/foundation/scss", "web/bower/"
+add_import_path "web/bower/angular-material", "web/bower/"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
