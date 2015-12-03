@@ -1,6 +1,50 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block body %}
+
+    <md-toolbar md-scroll-shrink>
+
+        <div class="md-toolbar-tools">
+            <h2>Core Admin</h2>
+            <span flex></span>
+
+
+            <md-button  aria-label="Dashboard">
+                <i class="fa fa-th-large"></i> Dashboard
+            </md-button>
+
+            <md-button  aria-label="Phone">
+                <i class="fa fa-phone"></i> Phone
+            </md-button>
+
+            <md-button  aria-label="Tracking">
+                <i class="fa fa-code"></i> Tracking
+            </md-button>
+
+            <md-button  aria-label="Settings">
+                <i class="fa fa-cog"></i> Settings
+            </md-button>
+
+            <md-menu>
+                 <!-- Trigger element is a md-button with an icon -->
+                 <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open Client Menu">
+                     <img class="md-avatar" ng-src="{[{client.img}]}" />
+                 </md-button>
+
+                 <md-menu-content>
+                     <md-menu-item ng-value="client" ng-repeat="client in clients">
+                         <md-button>
+                             <img class="md-avatar" ng-src="{[{client.img}]}" /> {[{client.name}]}
+                         </md-button>
+                     </md-menu-item>
+                 </md-menu-content>
+            </md-menu>
+
+
+        </div>
+    </md-toolbar>
 
     {% block header_outer %}
         {% set header = block('header') %}
