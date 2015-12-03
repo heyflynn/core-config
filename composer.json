@@ -37,7 +37,7 @@
             "node node_modules/bower/bin/bower install --allow-root",
             "ComposerScripts::postUpdate",
             "gulp build"
-        ]
+        ],
     },
     "autoload": {
         "psr-4": {

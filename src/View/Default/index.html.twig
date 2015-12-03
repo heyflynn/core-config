@@ -22,13 +22,14 @@
 </div>
 #}
 
+{#
   <md-toolbar layout="row" class="preload-primary">
     <div class="md-toolbar-tools">
       <md-button ng-click="vm.toggleSidenav('left')" hide-gt-sm class="md-icon-button">
         <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg">
         </md-icon>
       </md-button>
-      <h1>Angular Material: &nbsp; Starter CodePen </h1>
+      <h1>Angular Material: &nbsp; Starter CodePen (edit) </h1>
     </div>
   </md-toolbar>
   <div layout="row" flex>
@@ -42,6 +43,16 @@
         <p>This is the content area! </p>
       </md-content>
     </div>
+#}
 
+<div layout="row">
+  <div flex>First item in row</div>
+  <div flex>Second item in row</div>
+</div>
+
+<div layout="column">
+  <div flex>First item in column</div>
+  <div flex>Second item in column</div>
+</div>
 
 {% endblock %}
