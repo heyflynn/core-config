@@ -5,9 +5,13 @@ var app = angular.module('signal', ['ngMaterial'])
     .config(['$interpolateProvider', '$mdThemingProvider',function($interpolateProvider,$mdThemingProvider) {
         $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
 
+/*
         $mdThemingProvider.theme('default')
-            .primaryPalette('deep-purple');
-
+            .primaryPalette('light-blue')
+            .accentPalette('purple')
+            .dark();
+            ;
+*/
     }])
 ;
 
